@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <%@listing.each do |x|%>
+        <div class="col-sm-4">
+            <% if x.images? %>
+                <img class="card-img-top" src= "<%=x.images[0]%>" alt="Card image cap">
+            <%else%>
+                <img class="card-img-top" src= "/assets/default_house.png" alt="Card image cap">
+            <%end%>
+            <div class="card-body">
+                <h4 class="card-title"><%=x.name%></h3>
+                <p class="card-text"><%=x.price%><br></p>
+            </div>
+        </div>
+        <%end%>
+    </div>
+</div>
+
+
+<%= will_paginate @listing %>

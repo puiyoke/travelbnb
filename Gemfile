@@ -65,6 +65,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem "clearance"
 gem 'figaro'
+gem "faker"
+gem 'will_paginate', '~> 3.1.0'
+
 
 #google login
 gem "omniauth"
