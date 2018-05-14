@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   #google
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
 
+  get "listings/:id" => "listings#show"
+
 
 end

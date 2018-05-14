@@ -1,4 +1,30 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <%if @listing.images?%>
+            <% @listing.images.each do |image| %>
+            <div class="carousel-item <%= 'active' if image == @listing.images[0] %>">
+            <img class="img-fluid" src= <%=image.url%> class="images">
+            </div>
+            <%end%>
+        <%end%>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+    </a>
+</div>
+
+Property Name: <%=@listing.name%><br>
+Price/night: <%=@listing.price%><br>
+Country: <%=@listing.country%><br>
+Address: <%=@listing.city%>,
+<%=@listing.state%>,
+<%=@listing.zipcode%><br>
+Phone: <%=@listing.phone%>
