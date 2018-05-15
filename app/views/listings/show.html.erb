@@ -27,4 +27,12 @@ Country: <%=@listing.country%><br>
 Address: <%=@listing.city%>,
 <%=@listing.state%>,
 <%=@listing.zipcode%><br>
-Phone: <%=@listing.phone%>
+Phone: <%=@listing.phone%><br>
+Verified: <%=@listing.verified%><br>
+<%if signed_in?%>
+    <%if current_user.customer?%>
+        <a href="/listings/<%= @listing.id%>/verify">Book</a>
+        <%else%>
+        <a href="/listings/<%= @listing.id%>/verify">Verify</a>
+    <%end%>
+<%end%>

@@ -8,5 +8,5 @@ Rails.application.routes.draw do
 
   get "listings/:id" => "listings#show"
 
-
+  get "listings/:id/verify" => "listings#verify"
 end
